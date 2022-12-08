@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Horse : Animals
+public class Horse : Animals //Inheritance 
 {
    
     void Start()
     {
         addValues();
-        Debug.Log("Name:" + animalName + " Speed:" + animalSpeed + " JumpForce:" + jumpForce);
+        //Debug.Log("Name:" + animalName + " Speed:" + animalSpeed + " JumpForce:" + jumpForce); //check values
 
         animalRB = GetComponent<Rigidbody>();
     }
@@ -16,7 +16,9 @@ public class Horse : Animals
     // Update is called once per frame
     void Update()
     {
-        Move(transform,animalSpeed);
+        Move(transform,animalSpeed); // Abstraction 
+
+        DestroyAnimal(gameObject, 6); // Abstraction 
     }
 
     void addValues()

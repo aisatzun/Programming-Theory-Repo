@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cow : Animals
+public class Cow : Animals //Inheritance 
 {
+
     
     void Start()
     {
         addValues();
-        Debug.Log("Name:" + animalName + " Speed:" + animalSpeed + " JumpForce:" + jumpForce);
+        //Debug.Log("Name:" + animalName + " Speed:" + animalSpeed + " JumpForce:" + jumpForce); //check values
 
         animalRB = GetComponent<Rigidbody>();
     }
@@ -16,7 +17,9 @@ public class Cow : Animals
     
     void Update()
     {
-        Move(transform,animalSpeed);
+        Move(transform,animalSpeed); 
+
+        DestroyAnimal(gameObject, 10); 
     }
 
     void addValues()

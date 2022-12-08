@@ -3,21 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dog : Animals
+public class Dog : Animals  //Inheritance 
 {
-    
+
+
     void Start()
     {
         AddValues();
-        Debug.Log("Name:" + animalName + " Speed:" + animalSpeed + " JumpForce:" + jumpForce);
+        //Debug.Log("Name:" + animalName + " Speed:" + animalSpeed + " JumpForce:" + jumpForce); //check values
 
         animalRB = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        Move(transform, animalSpeed);
+        Move(transform, animalSpeed); // Abstraction 
+
+        DestroyAnimal(gameObject, 8); // Abstraction 
+
     }
 
     void AddValues()
@@ -27,7 +31,7 @@ public class Dog : Animals
         jumpForce = 4f;
     }
 
-    public override void Jump(float _force)
+    public override void Jump(float _force)  //Polymorphism
     {
         animalRB.AddForce(Vector3.up * _force, ForceMode.Impulse);
         isGrounded = false;
@@ -38,7 +42,7 @@ public class Dog : Animals
         if (isGrounded)
         {
             Jump(jumpForce);
-            isGrounded=false;
+            isGrounded = false;
         }
     }
 

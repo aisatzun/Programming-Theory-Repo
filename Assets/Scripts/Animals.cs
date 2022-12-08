@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Animals : MonoBehaviour
 {
-    private string _AnimalName;
+    private string _AnimalName; //Encapsulation
     public string animalName
     {
         get { return _AnimalName; }
         set { _AnimalName = value; }
     }
-    private float _AnimalSpeed;
+    private float _AnimalSpeed; //Encapsulation
     public float animalSpeed
     {
         get { return _AnimalSpeed; }
@@ -23,7 +23,7 @@ public class Animals : MonoBehaviour
 
         }
     }
-    private float _JumpForce;
+    private float _JumpForce; //Encapsulation
     public float jumpForce
     {
         get { return _JumpForce; }
@@ -48,4 +48,8 @@ public class Animals : MonoBehaviour
         _transform.position += new Vector3(1,0,0)*_speed*Time.deltaTime;
     }
 
+    public void DestroyAnimal(GameObject _gameObject, float dTime)
+    {
+        Destroy(_gameObject,dTime);
+    }
 }
